@@ -1,5 +1,14 @@
 .produit {
-    background-color: rgb(192, 238, 238);
+    background-color: rgb(223, 243, 243);
     margin: 20px;
     padding: 20px;
+    border-radius: 5px;
+}
+
+.productimg {
+    margin-bottom: 10px;
+}
+
+.basketbtn {
+    text-align: right;
 }

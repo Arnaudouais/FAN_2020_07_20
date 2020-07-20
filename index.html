@@ -53,16 +53,16 @@
         </nav>
 
 
-        <div id="view-content">
+        <div id="view-content" ng-controller="produitCtrl as prd">
             <div class="row produit"> 
                 <div class="col-lg-2">
-                    <h2>titre</h2>
-                    Produit
+                    <h2>{{prd.produit.nom}}</h2>
+                    {{prd.produit.desc}}
                     <h3>Prix</h3>
-                    2€
+                    {{prd.produit.prix|myCurrency}}
                 </div>
                 <div class="col-lg-2">
-                    <img src="/img/barratte.jpg" alt="beurre sans sel">
+                    <img class="productimg" ng-src="/img/{{prd.produit.img}}" alt="beurre sans sel">
                     
                     <!-- <button 
                     type="button" 
@@ -70,8 +70,9 @@
                         Ajouter au panier
                     </button> -->
                     <a 
-                    class="btn btn-info" 
-                    href="#" 
+                    class="btn btn-info basketbtn" 
+                    href="#"
+                    ng-click="prd.onAddCartClick(prd.produit)"
                     role="button">
                         Ajouter au panier
                     </a>
@@ -90,6 +91,8 @@
     
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/app/app.js"></script>
+    <script src="/app/ProduitCtrl/produitCtrl.js"></script>
+    <script src="/app/CurrencyFilter/currencyFilter.js"></script>
 </body>
 
 </html>
