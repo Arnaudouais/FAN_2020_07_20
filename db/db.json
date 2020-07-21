@@ -1,0 +1,26 @@
+{
+    "produits":[
+        {
+            "id":1,
+            "nom":"spaghetti ECO+",
+            "prix": 0.46,
+            "desc":"Des bonnes pates",
+            "stars":5,
+            "img": "barratte.jpg",
+            "stock":5
+        }
+    ],
+    "paniers":[
+        {
+            "id":0,
+            "produits":[
+                {"produitId":1,"qty":1},
+                {"produitId":1,"qty":2}
+            ]
+        }
+    ],
+    "boutique":
+    {
+        "raisonSociale":"chez eustache"
+    }
+}

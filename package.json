@@ -19,5 +19,8 @@
   "dependencies": {
     "angular": "^1.8.0",
     "lite-server": "^2.5.4"
+  },
+  "devDependencies": {
+    "json-server": "^0.16.1"
   }
 }
