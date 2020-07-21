@@ -52,23 +52,79 @@
             </div><!-- /.navbar-collapse -->
         </nav>
 
+        <div class="panier" ng-controller="panierCtrl as pn">
+            <h2>Panier</h2>
+            <div ng-repeat="prod in pn.arrayProduits">
+                <div class="panierproduit row">
+                    <div class="col-lg-3">
+                        {{prod.nom}}
+                    </div>
+                    <div class="col-lg-3">
+                        {{prod.prix|myCurrency:2}}
+                    </div>
+                    <div class="col-lg-3">
+                        <img class="panierimg" ng-src="/img/{{prod.img}}" alt="prod.name">
+                    </div> 
+                    <div class="col-lg-3">
+                        <button type="button" class="btn btn-warning" ng-click="pn.removeQuant(prod)">-</button>
+                        {{prod.qty}}
+                        <button type="button" class="btn btn-warning" ng-click="pn.addQuant(prod)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div id="view-content" ng-controller="produitCtrl as prd">
-            <div class="row produit"> 
+        <div id="view-content">
+            <div class="produits" ng-controller="produitsCtrl as prds">
+                <div class="produits-produit" ng-repeat="prod in prds.arrayProduits">
+                    <div class="row produit" ng-controller="produitCtrl as prd"> 
+                        <div class="col-lg-2">
+                            <h2>{{prod.nom}}</h2>
+                            {{prod.desc}}
+                            <h3>Prix</h3>
+                            {{prod.prix|myCurrency:2}}
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="d-inbl">
+                                <img class="productimg" ng-src="/img/{{prod.img}}" alt="prod.name">
+                                <div class="d-flex">
+                                    <button 
+                                    type="button" 
+                                    class="btn btn-primary" 
+                                    ng-click="viewProduit(prod)"
+                                    >
+                                        Voir le produit
+                                    </button>
+
+                                    <button 
+                                    type="button" 
+                                    class="btn btn-info basketbtn"
+                                    ng-click="prd.onAddCartClick(prd.produit)"
+                                    >
+                                        Ajouter au panier
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row produit" ng-controller="produitCtrl as prd"> 
                 <div class="col-lg-2">
                     <h2>{{prd.produit.nom}}</h2>
                     {{prd.produit.desc}}
                     <h3>Prix</h3>
-                    {{prd.produit.prix|myCurrency}}
+                    {{prd.produit.prix|myCurrency:2}}
                 </div>
                 <div class="col-lg-2">
                     <img class="productimg" ng-src="/img/{{prd.produit.img}}" alt="beurre sans sel">
                     
-                    <!-- <button 
+                    <button 
                     type="button" 
                     class="btn btn-info">
                         Ajouter au panier
-                    </button> -->
+                    </button>
                     <a 
                     class="btn btn-info basketbtn" 
                     href="#"
@@ -77,12 +133,12 @@
                         Ajouter au panier
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     
         <div 
         id="footer"
-        style="text-align: center; position: absolute; bottom: 0; left: 0; right: 0;">
+        style="text-align: center; position: fixed; bottom: 0; left: 0; right: 0; background-color: rgb(116, 116, 116); color:white;">
             Footer
         </div>
     </div>
@@ -91,7 +147,9 @@
     
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/app/app.js"></script>
+    <script src="/app/PanierCtrl/panierCtrl.js"></script>
     <script src="/app/ProduitCtrl/produitCtrl.js"></script>
+    <script src="/app/ProduitsCtrl/produitsCtrl.js"></script>
     <script src="/app/CurrencyFilter/currencyFilter.js"></script>
 </body>
 
