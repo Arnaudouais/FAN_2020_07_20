@@ -4,7 +4,8 @@
   "description": "cours Orsys Angularjs",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server",
+    "start": "npm run start-lite | npm run start-json",
+    "start-lite": "lite-server",
     "start-json":"json-server -p 5635 db/db.json"
   },
   "repository": {

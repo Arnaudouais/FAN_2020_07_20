@@ -54,7 +54,7 @@
 
         <div class="panier" ng-controller="panierCtrl as pn">
             <h2>Panier</h2>
-            <div ng-repeat="prod in pn.arrayProduits">
+            <div ng-repeat="prod in pn.arrayProduits track by $index">
                 <div class="panierproduit row">
                     <div class="col-lg-3">
                         {{prod.nom}}
@@ -74,55 +74,56 @@
             </div>
         </div>
 
-        <div id="view-content">
-            <div class="produits" ng-controller="produitsCtrl as prds">
-                <div class="produits-produit" ng-repeat="prod in prds.arrayProduits">
-                    <div class="row produit"> 
-                        <div class="col-lg-4">
-                            <h2>{{prod.nom}}</h2>
-                            {{prod.desc}}
-                            <h3>Prix</h3>
-                            {{prod.prix|myCurrency:2}}
-                        </div>
-                        <div class="col-lg-4"></div>
-                        <div class="col-lg-3">
-                            <div class="d-inbl">
-                                <img class="productimg" ng-src="/img/{{prod.img}}" alt="prod.name">
-                                <div class="d-flex">
-                                    <button 
-                                    type="button" 
-                                    class="btn btn-primary" 
-                                    ng-click="viewProduit(prod)"
-                                    >
-                                        Voir le produit
-                                    </button>
-
-                                    <button 
-                                    type="button" 
-                                    class="btn btn-info basketbtn"
-                                    ng-click="prd.onAddCartClick(prd.produit)"
-                                    >
-                                        Ajouter au panier
-                                    </button>
-                                </div>
+        <div id="view-content row">
+            <div class="col-lg-8">
+                <div class="produits" ng-controller="produitsCtrl as prds">
+                    <div class="produits-produit" ng-repeat="prod in prds.arrayProduits track by $index">
+                        <div class="row produit"> 
+                            <div class="col-lg-4">
+                                <h2>{{prod.nom}}</h2>
+                                {{prod.desc}}
+                                <h3>Prix</h3>
+                                {{prod.prix|myCurrency:2}}
                             </div>
-                            
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-3">
+                                <div class="d-inbl">
+                                    <img class="productimg" ng-src="/img/{{prod.img}}" alt="prod.name">
+                                    <div class="d-flex">
+                                        <button 
+                                        type="button" 
+                                        class="btn btn-primary" 
+                                        ng-click="onviewproduitclick(prod)"
+                                        >
+                                            Voir le produit
+                                        </button>
+    
+                                        <button 
+                                        type="button" 
+                                        class="btn btn-info basketbtn"
+                                        ng-click="prds.onAddCartClick(prod)"
+                                        >
+                                            Ajouter au panier
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row produit" ng-controller="produitCtrl as prd"> 
-                <div class="col-lg-2">
+            <div class="col-lg-4">
+                <div class="produitfocus" ng-controller="produitCtrl as prd"> 
                     <h2>ProduitCtrl: {{prd.produit.nom}}</h2>
                     {{prd.produit.desc}}
                     <h3>Prix</h3>
                     {{prd.produit.prix|myCurrency:2}}
-                </div>
-                <div class="col-lg-2">
                     <img class="productimg" ng-src="/img/{{prd.produit.img}}" alt="beurre sans sel">
                     
                     <button 
                     type="button" 
+                    ng-click="prd.onAddCartClick(prd.produit)"
                     class="btn btn-info">
                         Ajouter au panier
                     </button>
@@ -141,10 +142,13 @@
     
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/app/app.js"></script>
+    <script src="/app/CurrencyFilter/currencyFilter.js"></script>
+    <script src="/app/PanierService/panierService.js"></script>
+    <script src="/app/ProduitService/produitService.js"></script>
     <script src="/app/PanierCtrl/panierCtrl.js"></script>
     <script src="/app/ProduitCtrl/produitCtrl.js"></script>
     <script src="/app/ProduitsCtrl/produitsCtrl.js"></script>
-    <script src="/app/CurrencyFilter/currencyFilter.js"></script>
+    
 </body>
 
 </html>

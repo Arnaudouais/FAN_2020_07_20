@@ -21,7 +21,7 @@
       "prix": 0.46,
       "desc": "Des bonnes pates",
       "stars": 3,
-      "img": "barratte.jpg",
+      "img": "spa.jpeg",
       "stock": 5
     },
     {
@@ -31,7 +31,7 @@
       "prix": 3.86,
       "desc": "Cette flute a bec Made in Chine ravira les oreilles de vos proches",
       "stars": 5,
-      "img": "barratte.jpg",
+      "img": "flute.jpg",
       "stock": 3
     },
     {
@@ -41,7 +41,7 @@
       "prix": 2999.99,
       "desc": "Vroum.",
       "stars": 4,
-      "img": "barratte.jpg",
+      "img": "moto.jpg",
       "stock": 1
     },
     {
@@ -50,7 +50,7 @@
       "prix": 1.05,
       "desc": "Des bonnes pates",
       "stars": 3,
-      "img": "barratte.jpg",
+      "img": "farfalle.jpg",
       "stock": 5,
       "id": 4
     }
