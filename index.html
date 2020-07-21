@@ -77,14 +77,14 @@
         <div id="view-content">
             <div class="produits" ng-controller="produitsCtrl as prds">
                 <div class="produits-produit" ng-repeat="prod in prds.arrayProduits">
-                    <div class="row produit" ng-controller="produitCtrl as prd"> 
-                        <div class="col-lg-2">
+                    <div class="row produit"> 
+                        <div class="col-lg-4">
                             <h2>{{prod.nom}}</h2>
                             {{prod.desc}}
                             <h3>Prix</h3>
                             {{prod.prix|myCurrency:2}}
                         </div>
-                        <div class="col-lg-5"></div>
+                        <div class="col-lg-4"></div>
                         <div class="col-lg-3">
                             <div class="d-inbl">
                                 <img class="productimg" ng-src="/img/{{prod.img}}" alt="prod.name">
@@ -111,9 +111,9 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row produit" ng-controller="produitCtrl as prd"> 
+            <div class="row produit" ng-controller="produitCtrl as prd"> 
                 <div class="col-lg-2">
-                    <h2>{{prd.produit.nom}}</h2>
+                    <h2>ProduitCtrl: {{prd.produit.nom}}</h2>
                     {{prd.produit.desc}}
                     <h3>Prix</h3>
                     {{prd.produit.prix|myCurrency:2}}
@@ -126,15 +126,8 @@
                     class="btn btn-info">
                         Ajouter au panier
                     </button>
-                    <a 
-                    class="btn btn-info basketbtn" 
-                    href="#"
-                    ng-click="prd.onAddCartClick(prd.produit)"
-                    role="button">
-                        Ajouter au panier
-                    </a>
                 </div>
-            </div> -->
+            </div>
         </div>
     
         <div 

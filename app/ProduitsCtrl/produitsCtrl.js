@@ -1,11 +1,19 @@
-angular.module('app').controller('produitsCtrl',['$scope',function($scope){
-    this.arrayProduits = [
-        {nom:'Beurre',prix:2.00,desc:'Bah c est du beurre quoi',img:'barratte.jpg'},
-        {nom:'Beurre',prix:2.10,desc:'Bah c est du beurre quoi',img:'barratte.jpg'},
-        {nom:'Beurre',prix:2.15,desc:'Bah c est du beurre quoi',img:'barratte.jpg'},
-        {nom:'Beurre',prix:2.25,desc:'Bah c est du beurre quoi',img:'barratte.jpg'},
-        {nom:'Beurre',prix:2.55,desc:'Bah c est du beurre quoi',img:'barratte.jpg'}
-    ]
+angular.module('app').controller('produitsCtrl',['$http','$scope',function($http,$scope){
+    this.arrayProduits = [];
+    var _vm=this;
+    const getProduits=function(){
+        $http({url:'http://localhost:5635/produits',method:'GET'}).then(
+            function success(response) {
+                response.data.forEach((obj,index) => {
+                    _vm.arrayProduits.push(obj)
+                });
+            },
+            function failure(response) {
+                console.log('failure',response)
+            }
+        );
+    };
+    getProduits();
     $scope.viewProduit=function(produit){
         console.log(produit);
     }

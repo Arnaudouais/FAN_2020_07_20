@@ -1,26 +1,76 @@
 {
-    "produits":[
-        {
-            "id":1,
-            "nom":"spaghetti ECO+",
-            "prix": 0.46,
-            "desc":"Des bonnes pates",
-            "stars":5,
-            "img": "barratte.jpg",
-            "stock":5
-        }
-    ],
-    "paniers":[
-        {
-            "id":0,
-            "produits":[
-                {"produitId":1,"qty":1},
-                {"produitId":1,"qty":2}
-            ]
-        }
-    ],
-    "boutique":
+  "categories": [
     {
-        "raisonSociale":"chez eustache"
+      "id": 1,
+      "nom": "alimentaire"
+    },
+    {
+      "id": 2,
+      "nom": "loisir"
+    },
+    {
+      "id": 3,
+      "nom": "divers"
     }
+  ],
+  "produits": [
+    {
+      "id": 1,
+      "categorieId": 1,
+      "nom": "Spaghetti ECO+",
+      "prix": 0.46,
+      "desc": "Des bonnes pates",
+      "stars": 3,
+      "img": "barratte.jpg",
+      "stock": 5
+    },
+    {
+      "id": 2,
+      "categorieId": 2,
+      "nom": "Flute a bec",
+      "prix": 3.86,
+      "desc": "Cette flute a bec Made in Chine ravira les oreilles de vos proches",
+      "stars": 5,
+      "img": "barratte.jpg",
+      "stock": 3
+    },
+    {
+      "id": 3,
+      "categorieId": 2,
+      "nom": "Moto",
+      "prix": 2999.99,
+      "desc": "Vroum.",
+      "stars": 4,
+      "img": "barratte.jpg",
+      "stock": 1
+    },
+    {
+      "categorieId": 1,
+      "nom": "Farfalles ECO+",
+      "prix": 1.05,
+      "desc": "Des bonnes pates",
+      "stars": 3,
+      "img": "barratte.jpg",
+      "stock": 5,
+      "id": 4
+    }
+  ],
+  "paniers": [
+    {
+      "id": 0,
+      "produits": [
+        {
+          "produitId": 1,
+          "qty": 1
+        },
+        {
+          "produitId": 2,
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "boutique": {
+    "raisonSociale": "chez eustache"
+  }
 }
