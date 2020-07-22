@@ -4,6 +4,4 @@ angular.module('app').controller('produitCtrl', ['produitService','$scope', func
     this.onAddCartClick=function(prod){
         pds.ajouterAuPanier(pds.arrayProduits.find((elt)=>elt.id===prod.id));
     }
-
-    pds.getProduit(1);
 }])

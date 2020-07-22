@@ -1,5 +1,6 @@
 angular.module('app').controller('produitsCtrl',['$scope','produitService',function($scope,pds){
     this.arrayProduits = pds.arrayProduits;
+    this.produit = pds.produit;
 
     this.onAddCartClick=pds.ajouterAuPanier;
     
