@@ -16,23 +16,17 @@
   "produits": [
     {
       "id": 1,
-      "categorieId": 1,
-      "nom": "Spaghetti ECO+",
+      "nom": "Spaghetti ECO+p",
       "prix": 0.46,
       "desc": "Des bonnes pates",
-      "stars": 3,
-      "img": "spa.jpeg",
-      "stock": 5
+      "img": "spa.jpeg"
     },
     {
       "id": 2,
-      "categorieId": 2,
-      "nom": "Flute a bec",
+      "nom": "Flute a beccc",
       "prix": 3.86,
       "desc": "Cette flute a bec Made in Chine ravira les oreilles de vos proches",
-      "stars": 5,
-      "img": "flute.jpg",
-      "stock": 3
+      "img": "flute.jpg"
     },
     {
       "id": 3,
@@ -53,6 +47,13 @@
       "img": "farfalle.jpg",
       "stock": 5,
       "id": 4
+    },
+    {
+      "nom": "aaa",
+      "prix": 2,
+      "desc": "aaa",
+      "img": "barratte.jpg",
+      "id": 5
     }
   ],
   "paniers": [

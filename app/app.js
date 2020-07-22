@@ -5,25 +5,34 @@
         .module('app',['ngRoute']).config(['$routeProvider',function($routeProvider){
             $routeProvider.when('/home',{
                 template:'<h1>Boutique</h1> <p>Salut a tous !!</p> <a href="#!/produits" style="color:blue">Voir les produits</a>'
-            });
-            $routeProvider.when('/',{
+            })
+            .when('/',{
                 templateUrl:'/vues/produits.html',
                 controller:'produitsCtrl',
                 controllerAs:'prds'
-            });
-            $routeProvider.when('/produits',{
+            })
+            .when('/produits',{
                 templateUrl:'/vues/produits.html',
                 controller:'produitsCtrl',
                 controllerAs:'prds'
-            });
-            $routeProvider.when('/produit/:id',{
+            })
+            .when('/produit/:id',{
                 templateUrl:'/vues/produit.html',
                 controller:'produitCtrl',
                 controllerAs:'prd'
-            });
-            $routeProvider.when('/panier',{
+            })
+            .when('/panier',{
                 templateUrl:'/vues/panier.html'
-            });
+            })
+            .when('/newproduit',{
+                template:'<produit-form></produit-form>l'
+            })
+            .when('/newproduit/:id',{
+                templateUrl:'/vues/produitForm.html'
+            })
+            .otherwise({
+                redirectTo:'/'
+            })
         }])
     
 }());

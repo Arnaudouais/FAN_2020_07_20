@@ -1,5 +1,5 @@
 <div>
-    <div class="col-lg-8">
+    <div ng-class="prds.produit?'col-lg-8':'col-lg-12'">
         <div class="produits">
             <div class="produits-produit" ng-repeat="prod in prds.arrayProduits track by $index">
                 <div class="row produit"> 
@@ -39,7 +39,7 @@
 </div>
 
 <div ng-controller="produitCtrl as prd">
-    <div class="col-lg-4" ng-show="prd.produit.id!==undefined">
+    <div class="col-lg-4" ng-if="prd.produit.id!==undefined">
         <div class="produitfocus"> 
             <h2>ProduitCtrl: {{prd.produit.nom}}</h2>
             {{prd.produit.desc}}

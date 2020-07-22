@@ -29,6 +29,12 @@
     max-height: 100px;
 }
 
+.productimgfocus {
+    margin-bottom: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
 .basketbtn {
     margin-top: 3px;
 }
@@ -57,4 +63,8 @@
 
 .t-center{
     text-align: center;
+}
+
+.form{
+    margin: 20px;
 }
