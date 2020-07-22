@@ -11,12 +11,12 @@
         this.arrayProduits = [];
         this.produit={};
         this.ajouterAuPanier= (produit)=> {
-            if(produit.qty!==undefined){
-                produit.qty+=1;
-            } else {
+            if(produit.qty===undefined || produit.qty === 0){
                 var _prod=produit;
                 _prod.qty=1;
                 pns.panier.push(_prod);
+            } else {
+                produit.qty+=1;
             }
 
         }

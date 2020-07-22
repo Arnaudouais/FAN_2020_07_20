@@ -1,4 +1,4 @@
-<div ng-controller="produitCtrl as prd">
+<div>
     <div class="col-lg-12" ng-show="prd.produit.id!==undefined">
         <div class="produitfocus"> 
             <h2>ProduitCtrl: {{prd.produit.nom}}</h2>
@@ -13,6 +13,20 @@
             class="btn btn-info">
                 Ajouter au panier
             </button>
+
+            <h2>AAAAAAA</h2>
+            <p>
+                {{prd.produit}}
+            </p>
+
+            <a 
+            type="button" 
+            class="btn btn-primary"
+            ng-href="#!/produits"
+            role="button"
+            >
+                Retour
+            </a>
         </div>
     </div>
 </div>

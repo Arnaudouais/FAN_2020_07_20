@@ -3,21 +3,27 @@
         <h2>Panier</h2>
         <div ng-repeat="prod in pn.arrayProduits track by $index">
             <div class="panierproduit row">
-                <div class="col-lg-3">
+                <div class="col-lg-3 t-center">
                     {{prod.nom}}
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 t-center">
                     {{prod.prix|myCurrency:2}}
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-2 t-center">
                     <img class="panierimg" ng-src="/img/{{prod.img}}" alt="prod.name">
                 </div> 
-                <div class="col-lg-3">
+                <div class="col-lg-2 t-center">
                     <button type="button" class="btn btn-warning" ng-click="pn.removeQuant(prod)">-</button>
                     {{prod.qty}}
                     <button type="button" class="btn btn-warning" ng-click="pn.addQuant(prod)">+</button>
                 </div>
+                <div class="col-lg-2 t-center">
+                    {{prod.prix*prod.qty|myCurrency:2}}
+                </div>
             </div>
         </div>
+    </div>
+    <div ng-show="!pn.arrayProduits.length" style="font-style: italic;">
+        Il n'y a pas d'articles dans votre panier.
     </div>
 </div>
