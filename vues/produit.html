@@ -1,0 +1,18 @@
+<div ng-controller="produitCtrl as prd">
+    <div class="col-lg-12" ng-show="prd.produit.id!==undefined">
+        <div class="produitfocus"> 
+            <h2>ProduitCtrl: {{prd.produit.nom}}</h2>
+            {{prd.produit.desc}}
+            <h3>Prix</h3>
+            {{prd.produit.prix|myCurrency:2}}
+            <img class="productimg" ng-src="/img/{{prd.produit.img}}" alt="beurre sans sel">
+            
+            <button 
+            type="button" 
+            ng-click="prd.onAddCartClick(prd.produit)"
+            class="btn btn-info">
+                Ajouter au panier
+            </button>
+        </div>
+    </div>
+</div>

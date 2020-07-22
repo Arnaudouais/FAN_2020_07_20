@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run start-lite | npm run start-json",
     "start-lite": "lite-server",
-    "start-json":"json-server -p 5635 db/db.json"
+    "start-json": "json-server -p 5635 db/db.json"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Arnaudouais/FAN_2020_07_20#readme",
   "dependencies": {
     "angular": "^1.8.0",
+    "angular-route": "^1.8.0",
     "lite-server": "^2.5.4"
   },
   "devDependencies": {

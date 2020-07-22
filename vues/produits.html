@@ -1,0 +1,73 @@
+<div>
+    <div class="col-lg-8">
+        <div class="produits">
+            <div class="produits-produit" ng-repeat="prod in prds.arrayProduits track by $index">
+                <div class="row produit"> 
+                    <div class="col-lg-4">
+                        <h2>{{prod.nom}}</h2>
+                        {{prod.desc}}
+                        <h3>Prix</h3>
+                        {{prod.prix|myCurrency:2}}
+                    </div>
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-3">
+                        <div class="d-inbl">
+                            <img class="productimg" ng-src="/img/{{prod.img}}" alt="prod.name">
+                            <div class="d-flex">
+                                <button 
+                                type="button" 
+                                class="btn btn-primary" 
+                                ng-click="onviewproduitclick(prod)"
+                                >
+                                    Voir le produit
+                                </button>
+
+                                <button 
+                                type="button" 
+                                class="btn btn-info basketbtn"
+                                ng-click="prds.onAddCartClick(prod)"
+                                >
+                                    Ajouter au panier
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-controller="produitCtrl as prd">
+    <div class="col-lg-4" ng-show="prd.produit.id!==undefined">
+        <div class="produitfocus"> 
+            <h2>ProduitCtrl: {{prd.produit.nom}}</h2>
+            {{prd.produit.desc}}
+            <h3>Prix</h3>
+            {{prd.produit.prix|myCurrency:2}}
+            <img class="productimg" ng-src="/img/{{prd.produit.img}}" alt="beurre sans sel">
+            
+
+            <div class="d-flex">
+                <button 
+                type="button" 
+                ng-click="prd.onAddCartClick(prd.produit)"
+                class="btn btn-info">
+                    Ajouter au panier
+                </button>
+
+                <a 
+                type="button" 
+                class="btn btn-primary"
+                href="#!/produit"
+                ng-click="onviewproduitclick(prod)"
+                role="button"
+                >
+                    Détails
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -35,7 +35,7 @@
         };
         getProduits();
         this.getProduit=function(id){
-            $http({url:'http://localhost:5635/produits/'+id/* +'?_expand=categorie' */,method:'GET'}).then(
+            $http({url:'http://localhost:5635/produits/'+id+'?_expand=categorie',method:'GET'}).then(
                 function success(response) {
                     Object.assign(_vm.produit,response.data);
                 },
